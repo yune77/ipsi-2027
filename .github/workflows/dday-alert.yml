@@ -84,17 +84,26 @@ jobs:
               lines.append("🎉 2027학년도 대입 일정이 모두 끝났습니다. 고생 많으셨어요!")
               lines.append("(이 알림은 저장소의 Actions 탭에서 워크플로를 비활성화하면 멈출 수 있어요.)")
 
+          # 대시보드 링크 (저장소 이름 기준으로 자동 생성)
+          repo = os.environ.get("GITHUB_REPOSITORY", "")
+          if repo and "/" in repo:
+              owner, name = repo.split("/", 1)
+              lines.append("")
+              lines.append(f"📊 대시보드 전체 보기\nhttps://{owner.lower()}.github.io/{name}/")
+
           msg = "\n".join(lines)
 
           token = os.environ["TELEGRAM_BOT_TOKEN"]
-          chat = os.environ["TELEGRAM_CHAT_ID"]
-          data = urllib.parse.urlencode({"chat_id": chat, "text": msg}).encode()
-          req = urllib.request.Request(
-              f"https://api.telegram.org/bot{token}/sendMessage", data=data)
-          with urllib.request.urlopen(req, timeout=30) as resp:
-              result = json.load(resp)
-          assert result.get("ok"), f"Telegram API error: {result}"
-          print("발송 완료:", msg.replace("\n", " / "))
+          # 쉼표로 여러 chat_id 등록 가능 (예: "8504940391,-100123456789")
+          chats = [c for c in os.environ["TELEGRAM_CHAT_ID"].replace(" ", "").split(",") if c]
+          for chat in chats:
+              data = urllib.parse.urlencode({"chat_id": chat, "text": msg}).encode()
+              req = urllib.request.Request(
+                  f"https://api.telegram.org/bot{token}/sendMessage", data=data)
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                  result = json.load(resp)
+              assert result.get("ok"), f"Telegram API error: {result}"
+              print(f"발송 완료 → {chat}")
           PYEOF
 
       # GitHub은 60일간 저장소에 커밋이 없으면 예약 실행을 자동으로 끕니다.
