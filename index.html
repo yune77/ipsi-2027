@@ -121,6 +121,20 @@
   .strategy-item .body .txt{ font-size:13.5px; color:var(--text-secondary); }
   @media (max-width: 860px){ .strategy-list{ grid-template-columns: 1fr; } }
 
+  /* ---------- university lookup ---------- */
+  .univ-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:14px; }
+  .univ-card h3{ font-size:16px; margin-bottom:2px; }
+  .univ-card .univ-campus{ font-size:12px; color:var(--text-muted); margin-bottom:8px; }
+  .univ-status{ display:inline-block; font-size:11px; font-weight:700; border-radius:6px; padding:2px 8px; margin-bottom:10px; }
+  .univ-status.ok{ background:#e4f7ef; color:#0c6b47; }
+  .univ-status.pending{ background:#f1f0ea; color:var(--text-muted); }
+  .univ-row{ font-size:13.5px; color:var(--text-secondary); margin-bottom:6px; }
+  .univ-row b{ color:var(--text-primary); }
+  .univ-campus-note{ font-size:12px; color:var(--status-serious); background:#fef2ec; border:1px solid #f7d9c9; padding:6px 9px; border-radius:8px; margin-top:8px; }
+  .univ-links{ margin-top:10px; font-size:12.5px; }
+  .univ-links a{ margin-right:10px; }
+  @media (max-width: 860px){ .univ-grid{ grid-template-columns: 1fr; } }
+
   /* ---------- site directory ---------- */
   .site-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
   .site-card{ position:relative; }
@@ -262,11 +276,132 @@
     </div>
   </section>
 
+  <!-- 9. 월별 체크리스트 -->
+  <section id="checklist-section">
+    <div class="section-head">
+      <h2>월별 학부모 체크리스트</h2>
+      <span class="sub">체크 상태는 저장되지 않고 이 화면을 여는 동안만 유지됩니다</span>
+    </div>
+    <div class="checklist-grid" id="checklist-grid">
+
+      <div class="card month-card" data-month="2026-07">
+        <h3>2026년 7월 <span class="month-progress">0/3</span></h3>
+        <label><input type="checkbox">7/8 학평 성적으로 현재 정시 위치 가늠하기</label>
+        <label><input type="checkbox">수시 지원 후보 대학 6곳 초안 작성 (학종/교과 구분)</label>
+        <label><input type="checkbox">진학사 등 모의지원 서비스 둘러보고 활용법 익히기</label>
+      </div>
+
+      <div class="card month-card" data-month="2026-08">
+        <h3>2026년 8월 <span class="month-progress">0/3</span></h3>
+        <label><input type="checkbox">수능 원서접수 일정 확인 (온라인 사전입력 8/20~9/3)</label>
+        <label><input type="checkbox">교과·학종 지원 서류(학생부, 결시·출결 등) 최종 점검</label>
+        <label><input type="checkbox">9월 모평 대비 학습 계획 재정비</label>
+      </div>
+
+      <div class="card month-card" data-month="2026-09">
+        <h3>2026년 9월 <span class="month-progress">0/4</span></h3>
+        <label><input type="checkbox">9/2 9월 모평 응시 → 정시 지원선 재점검</label>
+        <label><input type="checkbox">수시 원서접수(9/7~11) 대학별 마감일 캘린더에 정리</label>
+        <label><input type="checkbox">수능최저 충족 가능성 최종 시뮬레이션</label>
+        <label><input type="checkbox">원서 접수 시스템(유웨이 등) 마감 직전 서버 지연 대비 계획</label>
+        <label><input type="checkbox">수시 원서비 예산 준비 (대학당 통상 5~7만원대, 6장 기준 30~40만원 안팎)</label>
+      </div>
+
+      <div class="card month-card" data-month="2026-10">
+        <h3>2026년 10월 <span class="month-progress">0/3</span></h3>
+        <label><input type="checkbox">10/20 10월 학평으로 수능 전 최종 컨디션 점검</label>
+        <label><input type="checkbox">수시 대학별고사(면접·논술) 일정과 준비 상태 확인</label>
+        <label><input type="checkbox">정시 지원 전략 초안 (가/나/다군 조합) 잡아보기</label>
+      </div>
+
+      <div class="card month-card" data-month="2026-11">
+        <h3>2026년 11월 <span class="month-progress">0/3</span></h3>
+        <label><input type="checkbox">11/19 수능 응시 — 컨디션 관리 최우선</label>
+        <label><input type="checkbox">수능 가채점으로 수능최저 충족 여부 1차 확인</label>
+        <label><input type="checkbox">수시 대학별고사와 수능 이후 일정 겹침 여부 확인</label>
+        <label><input type="checkbox">수능 당일 준비물 점검: 수험표·신분증·컴퓨터용 사인펜·아날로그 시계·도시락(중식) — 입실 마감 시각은 매년 오전 8시 10분 전후였으나, 2027학년도 정확한 시각은 수능 시행계획 공고로 재확인</label>
+      </div>
+
+      <div class="card month-card" data-month="2026-12">
+        <h3>2026년 12월 <span class="month-progress">0/4</span></h3>
+        <label><input type="checkbox">12/11 성적표 수령 — 표준점수·백분위 최종 확인</label>
+        <label><input type="checkbox">수시 합격자 발표(~12/18) 확인</label>
+        <label><input type="checkbox">수시 등록(12/21~23)·추합(~12/31) 대응 — 대학마다 전화 개별 통보/홈페이지 순번 공개 등 통보 방식이 달라 각 대학 안내를 미리 확인, 전화 놓치지 않기</label>
+        <label><input type="checkbox">정시 지원 대학 최종 압축 (모의지원 재확인)</label>
+      </div>
+
+      <div class="card month-card" data-month="2027-01">
+        <h3>2027년 1월 <span class="month-progress">0/3</span></h3>
+        <label><input type="checkbox">1/4~7 정시 원서접수 — 가/나/다군 조합 최종 결정</label>
+        <label><input type="checkbox">가(1/11~17)·나(1/18~24)·다군(1/25~31) 전형 일정 정리</label>
+        <label><input type="checkbox">최종 경쟁률 확인 (원서 마감 직전까지)</label>
+      </div>
+
+      <div class="card month-card" data-month="2027-02">
+        <h3>2027년 2월 <span class="month-progress">0/3</span></h3>
+        <label><input type="checkbox">정시 합격자 발표(~2/5) 확인</label>
+        <label><input type="checkbox">정시 등록(2/10~12) 처리</label>
+        <label><input type="checkbox">미등록 시 추가모집(2/19~26) 대응 여부 결정</label>
+      </div>
+
+    </div>
+  </section>
+
+  <div style="margin:6px 0 30px; padding-top:16px; border-top:1px dashed var(--gridline); font-size:12.5px; color:var(--text-muted);">여기부터는 수시로 참고할 정보입니다 (매일 확인할 필요는 없어요)</div>
+
+  <!-- 6.5 대학별 전형 정보 찾아보기 -->
+  <section id="univ-section">
+    <div class="section-head">
+      <h2>대학별 전형 정보 찾아보기 (v1 예시 · 3곳)</h2>
+      <span class="sub">공식 2027학년도 자료로 실제 대조 확인된 대학만 우선 수록</span>
+    </div>
+    <div class="card" style="margin-bottom:14px; font-size:13px; color:var(--text-secondary);">
+      점수를 넣으면 대학을 추천해주는 방식이 아니라, 대학을 하나씩 골라 그 대학의 자연계 전형 정보(수능최저·반영비율·가산점)를 찾아보는 방식입니다. 확인되지 않은 수치를 채워 넣기보다, 공식 자료로 실제 대조한 대학만 우선 올려뒀습니다 — 그래서 지금은 3등급대 2곳(숭실대·광운대) · 2등급대 예시 1곳(경희대)만 있습니다. 다음 업데이트에서 나머지 대학을 순서대로 채울 예정입니다. 실제 지원 결정은 반드시 각 대학 최신 모집요강과 유료 모의지원으로 교차검증하세요.
+    </div>
+    <div class="univ-grid">
+
+      <div class="card univ-card">
+        <h3>숭실대학교</h3>
+        <div class="univ-campus">서울 상도 · 자연계열 다수 · 3등급대 참고</div>
+        <span class="univ-status ok">확인 완료 (2027학년도 시행계획 원문 대조) · 확인일 2026-07-04</span>
+        <div class="univ-row"><b>학생부교과(교과우수자) 수능최저</b>: 국어·수학(확통/미적분/기하 중 택1)·영어·탐구(1과목) 중 2개 영역 등급 합 6 이내</div>
+        <div class="univ-row"><b>학생부종합 수능최저</b>: 미래인재(면접형·서류형)·기회균형·SW우수자 등 전 전형 없음</div>
+        <div class="univ-row"><b>정시 반영비율(자연1·자연2·자유전공 자연)</b>: 국어 20% · 수학 35% · 영어 15% · 탐구 2과목 각 15%</div>
+        <div class="univ-row"><b>가산점</b>: 수학 미적분/기하 응시자 표준점수 가산(자연1 7%, 자연2 5%) · 과탐 8과목 응시자 백분위 최대 6%(2과목 각 3%) 가산</div>
+        <div class="univ-links"><a href="https://iphak.ssu.ac.kr" target="_blank" rel="noopener">입학처 바로가기</a></div>
+      </div>
+
+      <div class="card univ-card">
+        <h3>광운대학교</h3>
+        <div class="univ-campus">서울 노원 · 공과대학 중심 · 3등급대 참고</div>
+        <span class="univ-status ok">일부 확인 (2027 학종 가이드북 · 언론 보도 대조) · 확인일 2026-07-04</span>
+        <div class="univ-row"><b>학생부교과·학생부종합 수능최저</b>: 모든 수시 전형에 수능최저학력기준 미적용 (전 모집단위 공통) — 수능최저 부담 없이 내신·서류로만 승부 가능</div>
+        <div class="univ-row"><b>학생부종합(자기추천)</b>: 1단계 서류 100%로 3배수 선발 → 2단계 1단계 성적 70% + 면접 30%</div>
+        <div class="univ-row" style="color:var(--status-serious);">정시 반영비율·가산점은 이번 조사에서 확인하지 못함 — 아래 입학처에서 2027학년도 정시 모집요강 직접 확인 필요</div>
+        <div class="univ-links"><a href="https://iphak.kw.ac.kr" target="_blank" rel="noopener">입학처 바로가기</a></div>
+      </div>
+
+      <div class="card univ-card">
+        <h3>경희대학교</h3>
+        <div class="univ-campus">서울 회기 · 자연계열 다수 · 2등급대 예시</div>
+        <span class="univ-status ok">일부 확인 (2027 학생부전형 가이드북 대조) · 확인일 2026-07-04</span>
+        <div class="univ-row"><b>학생부교과(지역균형)</b>: 604명 선발, 최근 교과성적 평균 <b>1.65등급 내외</b> — "2등급대"로 알려졌지만 실제 합격선은 1등급대 후반에 가까움. 수능최저학력기준 적용(정확한 등급 조합은 미확인)</div>
+        <div class="univ-row"><b>학생부종합(네오르네상스)</b>: 1,076명 선발, 최근 교과성적 평균 2.42등급 내외, 의약학계열은 수능최저 적용</div>
+        <div class="univ-row" style="color:var(--status-serious);">정시 반영비율·가산점은 이번 조사에서 확인하지 못함 — 아래 입학처에서 2027학년도 정시 모집요강 직접 확인 필요</div>
+        <div class="univ-links"><a href="https://iphak.khu.ac.kr" target="_blank" rel="noopener">입학처 바로가기</a></div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- 4. 전형별 체크포인트 -->
   <section id="checkpoint-section">
     <div class="section-head">
       <h2>전형별 핵심 체크포인트</h2>
       <span class="sub">주요 22개대 기준 (베리타스알파 보도)</span>
+    </div>
+    <div class="card" style="margin-bottom:14px; font-size:13px; color:var(--text-secondary);">
+      "주요 22개대"는 가톨릭대·건국대·경희대·고려대·국민대·단국대·동국대·서강대·서울대·서울시립대·성균관대·세종대·숙명여대·숭실대·아주대·연세대·이화여대·인하대·중앙대·한국외대·한양대·홍익대 22곳입니다. 서울대·연세대 같은 최상위권부터 단국대·숭실대·아주대 같은 3등급대 근접 학교까지 섞여 있어, 아래 %는 이 22곳 전체 평균입니다. 실제로 학교별 편차가 커서(예: 숭실대 학종은 수능최저 전부 없음, 서울대 지역균형은 전 모집단위 최저 있음) 특정 목표 학교의 실제 조건은 위 "대학별 전형 정보 찾아보기"에서 개별로 확인하세요.
     </div>
     <div class="cp-grid">
       <div class="card cp-card jh">
@@ -277,6 +412,7 @@
           <li>서울대·연세대·고려대·성균관대·한양대·중앙대·경희대 등 7개 주요대 공통: "학생부만으로는 상위권 변별 한계" → 수능최저 신설·강화, 면접 강화</li>
           <li>서울대 지역균형전형은 전 모집단위 수능최저(국수영탐 3개 합 7 이내) 유지</li>
           <li>서울대 의예과 → 2027학년도부터 '의학과'(6년제 통합)로 명칭 변경</li>
+          <li>자기소개서는 이미 폐지됨(2024학년도부터 전면 폐지) — 학생부(교과·비교과 기록)와 면접만으로 평가, 별도 자소서 작성·제출 불필요</li>
         </ul>
         <div class="caveat">2028학년도 내신 5등급제 개편은 2025년 고1부터 적용 — 현재 고3(2027학년도 대입)은 해당 없음, 혼동 주의</div>
       </div>
@@ -377,42 +513,6 @@
     </div>
   </section>
 
-  <!-- 6. 우리 아이 맞춤 전략 -->
-  <section id="strategy-section">
-    <div class="section-head">
-      <h2>우리 아이 맞춤 전략</h2>
-      <span class="sub">내신 2~3등급대 · 자연계 · 수도권 목표 기준</span>
-    </div>
-    <div class="card">
-      <div class="strategy-list">
-        <div class="strategy-item">
-          <div class="num">1</div>
-          <div class="body"><b>수능최저 충족이 최대 관건</b><div class="txt">주요 22개대 교과전형의 87.4%가 수능최저를 적용합니다. 내신 관리만큼 수능 최저등급 확보 학습이 당락을 가릅니다.</div></div>
-        </div>
-        <div class="strategy-item">
-          <div class="num">2</div>
-          <div class="body"><b>내신대별 지원 多 대학 (참고용)</b><div class="txt">2등급대: 건국대·세종대·경희대·한양대·국민대 / 3등급대: 가천대 등 (진학사 태그 기준). <b>정확한 컷라인은 각 대학 입학처 확인 필요.</b></div></div>
-        </div>
-        <div class="strategy-item">
-          <div class="num">3</div>
-          <div class="body"><b>확통·사탐 선택 시 지원 제한 주의</b><div class="txt">자연계인데 확률과통계 또는 사회탐구를 선택하면 일부 대학·모집단위 지원이 제한될 수 있습니다. 미적분/기하+과탐 요건을 대학·학과 단위로 확인하세요.</div></div>
-        </div>
-        <div class="strategy-item">
-          <div class="num">4</div>
-          <div class="body"><b>수도권은 정시 병행 전략이 유효</b><div class="txt">수도권 대학 정시 비중이 32.1%로 전형 중 가장 큽니다. 수시에만 올인하지 않고 수능 학습을 끝까지 병행하는 전략이 통계적으로 합리적입니다.</div></div>
-        </div>
-        <div class="strategy-item">
-          <div class="num">5</div>
-          <div class="body"><b>"전년 입결 맹신 금지"</b><div class="txt">의대 증원(490명)과 무전공 확대가 겹치며 최상위권 이탈·추가합격 증가로 합격선이 예년과 달라질 수 있습니다. 전년도 컷은 참고만 하세요.</div></div>
-        </div>
-        <div class="strategy-item">
-          <div class="num">6</div>
-          <div class="body"><b>모의지원은 참고용, 맹신 금지</b><div class="txt">진학사 등 모의지원 5칸 구간은 특히 불확실합니다. 표본 오차와 눈치작전을 감안해 최종 경쟁률까지 함께 확인하세요.</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- 7. 입시정보 사이트 디렉토리 -->
   <section id="site-section">
     <div class="section-head">
@@ -458,20 +558,6 @@
       </div>
 
       <div class="card site-card">
-        <h3><a href="https://www.megastudy.net" target="_blank" rel="noopener">메가스터디 (megastudy.net)</a></h3>
-        <div class="site-meta">사설</div>
-        <span class="fee-badge fee-mixed">강의 유료 / 입시정보 무료</span>
-        <div class="use-line">연간 전형일정, 모의고사 일정을 무료로 확인할 때</div>
-      </div>
-
-      <div class="card site-card">
-        <h3>대성마이맥 / 이투스</h3>
-        <div class="site-meta">사설 (도메인 미확인 — 확인 필요)</div>
-        <span class="fee-badge fee-mixed">강의 유료 / 등급컷 자료 대체로 무료</span>
-        <div class="use-line">모의고사 직후 등급컷을 빠르게 확인할 때</div>
-      </div>
-
-      <div class="card site-card">
         <h3><a href="https://www.ebsi.co.kr" target="_blank" rel="noopener">EBSi (ebsi.co.kr)</a></h3>
         <div class="site-meta">EBS(한국교육방송공사)</div>
         <span class="fee-badge fee-free">강의 상당수 무료</span>
@@ -499,94 +585,14 @@
   <section id="special-section">
     <div class="section-head">
       <h2>2027학년도 특이사항</h2>
-      <span class="sub">전년도와 달라진 핵심 변수 3가지</span>
+      <span class="sub">의대 정원·2028 개편은 해당 없어 제외 — 실제 지원 전략에 영향 주는 변수만</span>
     </div>
-    <div class="special-grid">
-      <div class="card special-card">
-        <h3>의대 정원 확대</h3>
-        <div class="big">3,548명</div>
-        <div class="secondary" style="font-size:13px; margin-top:6px;">2024학년도 정상 정원 대비 490명 증원 · 서울 제외 전국 32개 의대에 지역의사전형으로 배정</div>
-        <div class="caveat" style="margin-top:10px;">일부 매체는 "4,957명"이라는 다른 수치를 보도 — 교육부 확정 발표 기준 3,548명이 다수 매체 교차확인 결과이나, 지원 시점에 요강으로 재확인 권장</div>
-      </div>
+    <div class="special-grid" style="grid-template-columns: 1fr;">
       <div class="card special-card">
         <h3>무전공(전공자율선택) 확대</h3>
         <div class="secondary" style="font-size:13.5px; margin-top:6px;">수도권 주요대가 무전공을 정시(나·다군)에 대규모 배치하는 흐름. 수도권은 무전공 수시(25.7%)·정시(25.1%) 비율이 비슷해 정시로도 진입 기회가 넓은 편입니다.</div>
-        <div class="caveat" style="margin-top:10px;">의대 증원과 겹치며 상위권 이탈 → 추가합격 증가 → 합격선 하락 가능성. "전년 입결 맹신 금지"</div>
+        <div class="caveat" style="margin-top:10px;">의대 증원 등 상위권 이탈 요인과 겹치며 추가합격 증가 → 합격선 하락 가능성. "전년 입결 맹신 금지"</div>
       </div>
-      <div class="card special-card">
-        <h3>2028학년도 개편, 현 고3은 해당 없음</h3>
-        <div class="secondary" style="font-size:13.5px; margin-top:6px;">고교 내신 9등급제 → 5등급제 전환은 2025년 고1부터 적용되어 2028학년도 대입부터 반영됩니다.</div>
-        <div class="caveat" style="margin-top:10px;">현재 고3 자녀(2027학년도 대입 대상)는 기존 9등급제 그대로 적용 — 뉴스에서 "5등급제" 이야기가 나와도 혼동하지 마세요</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. 월별 체크리스트 -->
-  <section id="checklist-section">
-    <div class="section-head">
-      <h2>월별 학부모 체크리스트</h2>
-      <span class="sub">체크 상태는 저장되지 않고 이 화면을 여는 동안만 유지됩니다</span>
-    </div>
-    <div class="checklist-grid" id="checklist-grid">
-
-      <div class="card month-card" data-month="2026-07">
-        <h3>2026년 7월 <span class="month-progress">0/3</span></h3>
-        <label><input type="checkbox">7/8 학평 성적으로 현재 정시 위치 가늠하기</label>
-        <label><input type="checkbox">수시 지원 후보 대학 6곳 초안 작성 (학종/교과 구분)</label>
-        <label><input type="checkbox">진학사 등 모의지원 서비스 둘러보고 활용법 익히기</label>
-      </div>
-
-      <div class="card month-card" data-month="2026-08">
-        <h3>2026년 8월 <span class="month-progress">0/3</span></h3>
-        <label><input type="checkbox">수능 원서접수 일정 확인 (온라인 사전입력 8/20~9/3)</label>
-        <label><input type="checkbox">교과·학종 지원 서류(학생부, 결시·출결 등) 최종 점검</label>
-        <label><input type="checkbox">9월 모평 대비 학습 계획 재정비</label>
-      </div>
-
-      <div class="card month-card" data-month="2026-09">
-        <h3>2026년 9월 <span class="month-progress">0/4</span></h3>
-        <label><input type="checkbox">9/2 9월 모평 응시 → 정시 지원선 재점검</label>
-        <label><input type="checkbox">수시 원서접수(9/7~11) 대학별 마감일 캘린더에 정리</label>
-        <label><input type="checkbox">수능최저 충족 가능성 최종 시뮬레이션</label>
-        <label><input type="checkbox">원서 접수 시스템(유웨이 등) 마감 직전 서버 지연 대비 계획</label>
-      </div>
-
-      <div class="card month-card" data-month="2026-10">
-        <h3>2026년 10월 <span class="month-progress">0/3</span></h3>
-        <label><input type="checkbox">10/20 10월 학평으로 수능 전 최종 컨디션 점검</label>
-        <label><input type="checkbox">수시 대학별고사(면접·논술) 일정과 준비 상태 확인</label>
-        <label><input type="checkbox">정시 지원 전략 초안 (가/나/다군 조합) 잡아보기</label>
-      </div>
-
-      <div class="card month-card" data-month="2026-11">
-        <h3>2026년 11월 <span class="month-progress">0/3</span></h3>
-        <label><input type="checkbox">11/19 수능 응시 — 컨디션 관리 최우선</label>
-        <label><input type="checkbox">수능 가채점으로 수능최저 충족 여부 1차 확인</label>
-        <label><input type="checkbox">수시 대학별고사와 수능 이후 일정 겹침 여부 확인</label>
-      </div>
-
-      <div class="card month-card" data-month="2026-12">
-        <h3>2026년 12월 <span class="month-progress">0/4</span></h3>
-        <label><input type="checkbox">12/11 성적표 수령 — 표준점수·백분위 최종 확인</label>
-        <label><input type="checkbox">수시 합격자 발표(~12/18) 확인</label>
-        <label><input type="checkbox">수시 등록(12/21~23)·추합(~12/31) 대응</label>
-        <label><input type="checkbox">정시 지원 대학 최종 압축 (모의지원 재확인)</label>
-      </div>
-
-      <div class="card month-card" data-month="2027-01">
-        <h3>2027년 1월 <span class="month-progress">0/3</span></h3>
-        <label><input type="checkbox">1/4~7 정시 원서접수 — 가/나/다군 조합 최종 결정</label>
-        <label><input type="checkbox">가(1/11~17)·나(1/18~24)·다군(1/25~31) 전형 일정 정리</label>
-        <label><input type="checkbox">최종 경쟁률 확인 (원서 마감 직전까지)</label>
-      </div>
-
-      <div class="card month-card" data-month="2027-02">
-        <h3>2027년 2월 <span class="month-progress">0/3</span></h3>
-        <label><input type="checkbox">정시 합격자 발표(~2/5) 확인</label>
-        <label><input type="checkbox">정시 등록(2/10~12) 처리</label>
-        <label><input type="checkbox">미등록 시 추가모집(2/19~26) 대응 여부 결정</label>
-      </div>
-
     </div>
   </section>
 
